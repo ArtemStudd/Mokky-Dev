@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .register, .login {
+     border: 1 px solid #000;
+     width: 500px;
+     padding: 30px;
+     background-color: blueviolet;
+     color: #fff;
+     margin-bottom: 40px;
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+    }
+    input {
+        padding: 10px;
+    }
+    button {
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+    }
+    button:hover {
+        background-color: green;
+    }
+</style>
+</head>
+<body>
+    <form class="register">
+     <h1>Регистрация</h1>
+     <input class="name" type="text" placeholder="Имя">
+     <input type="text" class="email-reg" placeholder="Почта">
+     <input type="text" class="password-reg" placeholder="Пароль">
+     <button class="submit-reg">Registr</button>
+    </form>
+    <form class="login">
+     <h1>Вход</h1>
+     <input type="text" class="email-login" placeholder="Почта">
+     <input type="text" class="password-login" placeholder="Пароль">
+     <button class="submit-reg">Login</button>
+    </form>
+
+    <script src="/index.js"></script>
+</body>
+</html>
