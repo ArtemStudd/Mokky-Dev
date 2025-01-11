@@ -33,6 +33,32 @@ event.preventDefault()
 register()    
 })
 // вxод
-const emailLogin = document.querySelector('.email')
-const passwordLogin = document.querySelector('.password')
-const submitLogin = document.querySelector('.submit')
+const emailLogin = document.querySelector('.email-login')
+const passwordLogin = document.querySelector('.password-login')
+const submitLogin = document.querySelector('.submit-login')
+
+async function login () {
+    try{
+    const res = await fetch ("https://0007e0d42e40ae66.mokky.dev/auth", {
+        method:"POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            email: emailLogin.value,
+            password: passwordLogin.value
+        })
+    });
+    const data = await res.json()
+    localStorage.setItem('token', data.token)
+    
+   window.location.href = 'main.html'
+}  catch(error) {
+   console.error (`Упс произошла ошибка${error}`)
+} 
+}
+submitLogin.addEventListener('click', (event) => {
+event.preventDefault()
+login()    
+})
